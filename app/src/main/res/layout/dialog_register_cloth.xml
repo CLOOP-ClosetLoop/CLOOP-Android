@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_radius_white"
+    android:padding="22dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/btn_cancel"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="닫기 버튼" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새 옷을 어떻게 등록하시겠습니까?"
+            android:textColor="@color/primary_2"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/btn_close"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/button_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+            <ImageView
+                android:id="@+id/btn_register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/btn_register"
+                android:layout_marginEnd="8dp" />
+            <ImageView
+                android:id="@+id/btn_ai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/btn_ai"/>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+
