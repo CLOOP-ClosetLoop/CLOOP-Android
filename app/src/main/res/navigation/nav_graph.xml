@@ -29,4 +29,27 @@
         android:label="MyPage"
         tools:layout="@layout/fragment_my_page" />
 
+    <fragment
+        android:id="@+id/clothRegisterFragment"
+        android:name="com.example.cloop.ui.closet.ClothRegisterFragment"
+        android:label="fragment_cloth_register"
+        tools:layout="@layout/fragment_cloth_register" />
+
+    <fragment
+        android:id="@+id/clothRegisterFragment2"
+        android:name="com.example.cloop.ui.closet.ClothRegisterFragment2"
+        android:label="fragment_cloth_register2"
+        tools:layout="@layout/fragment_cloth_register2" />
+
+    <fragment
+        android:id="@+id/aiClassifierFragment"
+        android:name="com.example.cloop.ui.closet.AiClassifierFragment"
+        android:label="fragment_ai_classifier"
+        tools:layout="@layout/fragment_ai_classifier" />
+    <fragment
+        android:id="@+id/inactiveClosetFragment"
+        android:name="com.example.cloop.ui.closet.InactiveClosetFragment"
+        android:label="fragment_inactive_closet"
+        tools:layout="@layout/fragment_inactive_closet" />
+
 </navigation>
