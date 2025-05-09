@@ -1,38 +1,42 @@
-package com.example.cloop.ui.closet
+package com.example.cloop.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.fragment.navArgs
 import com.example.cloop.R
-import com.example.cloop.databinding.FragmentInactiveClosetBinding
+import com.example.cloop.databinding.FragmentOutfitRegisterBinding
 
-class InactiveClosetFragment : Fragment() {
+class OutfitRegisterFragment : Fragment() {
 
-    private var _binding: FragmentInactiveClosetBinding? = null
+    private var _binding: FragmentOutfitRegisterBinding? = null
     private val binding get() = _binding!!
 
+    private val args: OutfitRegisterFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentInactiveClosetBinding.inflate(inflater, container, false)
+        _binding = FragmentOutfitRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val selectedDate = args.selectedDate
+        Log.d("받은날짜", selectedDate)  // ex: "2025-04-23"
 
-        // 뒤로가기
         binding.ivBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
