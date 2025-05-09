@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.cloop.R
 import com.example.cloop.databinding.FragmentClosetBinding
 import com.example.cloop.ui.closet.adapter.ClosetPagerAdapter
@@ -34,6 +35,15 @@ class ClosetFragment : Fragment() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = categories[position]
         }.attach()
+
+        binding.llInactiveCloset.setOnClickListener {
+            findNavController().navigate(R.id.inactiveClosetFragment)
+        }
     }
 
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
