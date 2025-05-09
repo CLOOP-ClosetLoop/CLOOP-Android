@@ -12,12 +12,15 @@ import com.example.cloop.R
 import com.example.cloop.databinding.DialogRegisterClothBinding
 import com.example.cloop.databinding.FragmentHomeBinding
 import com.example.cloop.ui.closet.ClothRegisterFragment
+import com.example.cloop.ui.home.calender.DotDecorator
 import com.prolificinteractive.materialcalendarview.CalendarDay
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private var selectedDate: CalendarDay? = null
 
 
     override fun onCreateView(
@@ -31,15 +34,34 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         // '새 옷 등록하기' 클릭 시 다이얼로그 띄움
         binding.llRegister.setOnClickListener {
             showRegisterClothDialog()
         }
-
         // '옷장 보기' 클릭 시 ClosetFragment 로 이동
         binding.llCloset.setOnClickListener {
             findNavController().navigate(R.id.fragment_closet)
+        }
+
+        val calendarView = binding.calenderView
+
+        // ✅ 날짜 선택하면 저장
+        calendarView.setOnDateChangedListener { _, date, selected ->
+            if (selected) {
+                selectedDate = date
+            }
+        }
+
+        // ✅ 플러스 버튼 클릭 시 날짜 넘기며 이동
+        binding.btnPlus.setOnClickListener {
+            selectedDate?.let { date ->
+                val dateStr = date.date.toString()  // LocalDate → "2025-04-23"
+                val action = HomeFragmentDirections
+                    .actionFragmentHomeToFragmentOutfitRegister(dateStr)
+                findNavController().navigate(action)
+            } ?: run {
+                Toast.makeText(requireContext(), "날짜를 선택해주세요", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
