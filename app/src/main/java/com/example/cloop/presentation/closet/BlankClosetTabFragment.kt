@@ -1,4 +1,4 @@
-package com.example.cloop.ui.closet
+package com.example.cloop.presentation.closet
 
 import android.os.Bundle
 import android.view.Gravity

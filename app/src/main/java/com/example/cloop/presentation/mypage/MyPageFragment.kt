@@ -1,4 +1,4 @@
-package com.example.cloop.ui.mypage
+package com.example.cloop.presentation.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

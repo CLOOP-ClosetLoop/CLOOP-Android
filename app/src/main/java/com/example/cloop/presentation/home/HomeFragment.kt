@@ -1,4 +1,4 @@
-package com.example.cloop.ui.home
+package com.example.cloop.presentation.home
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -11,8 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.cloop.R
 import com.example.cloop.databinding.DialogRegisterClothBinding
 import com.example.cloop.databinding.FragmentHomeBinding
-import com.example.cloop.ui.closet.ClothRegisterFragment
-import com.example.cloop.ui.home.calender.DotDecorator
 import com.prolificinteractive.materialcalendarview.CalendarDay
 
 class HomeFragment : Fragment() {

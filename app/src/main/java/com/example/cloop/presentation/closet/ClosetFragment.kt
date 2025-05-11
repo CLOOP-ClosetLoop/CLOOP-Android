@@ -1,4 +1,4 @@
-package com.example.cloop.ui.closet
+package com.example.cloop.presentation.closet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.cloop.R
 import com.example.cloop.databinding.FragmentClosetBinding
-import com.example.cloop.ui.closet.adapter.ClosetPagerAdapter
+import com.example.cloop.presentation.closet.adapter.ClosetPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ClosetFragment : Fragment() {

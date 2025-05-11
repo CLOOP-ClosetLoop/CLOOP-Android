@@ -1,17 +1,15 @@
-package com.example.cloop.ui.closet
+package com.example.cloop.presentation.closet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.cloop.R
-import com.example.cloop.databinding.FragmentClothRegisterBinding
+import com.example.cloop.databinding.FragmentInactiveClosetBinding
 
-class ClothRegisterFragment : Fragment() {
+class InactiveClosetFragment : Fragment() {
 
-    private var _binding: FragmentClothRegisterBinding? = null
+    private var _binding: FragmentInactiveClosetBinding? = null
     private val binding get() = _binding!!
 
 
@@ -19,21 +17,17 @@ class ClothRegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentClothRegisterBinding.inflate(inflater, container, false)
+        _binding = FragmentInactiveClosetBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 뒤로가기
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
 
-        // 다음 화면으로 이동
-        binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.clothRegisterFragment2)
+        // 뒤로가기
+        binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
 

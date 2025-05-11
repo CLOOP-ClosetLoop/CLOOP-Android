@@ -1,16 +1,16 @@
-package com.example.cloop.ui.donate
+package com.example.cloop.presentation.closet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.cloop.R
-import com.example.cloop.databinding.FragmentDonateBinding
+import androidx.navigation.fragment.findNavController
+import com.example.cloop.databinding.FragmentClothRegister2Binding
 
-class DonateFragment : Fragment() {
+class ClothRegisterFragment2 : Fragment() {
 
-    private var _binding: FragmentDonateBinding? = null
+    private var _binding: FragmentClothRegister2Binding? = null
     private val binding get() = _binding!!
 
 
@@ -18,22 +18,24 @@ class DonateFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDonateBinding.inflate(inflater, container, false)
+        _binding = FragmentClothRegister2Binding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 임시 테스트로 !!!!!!!! caution 이미지 클릭 시 다이얼로그 띄움
-        binding.ivCaution.setOnClickListener {
-            DonateConfirmDialog().show(parentFragmentManager, "DonateConfirmDialog")
+        // 뒤로가기
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
         }
+
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
