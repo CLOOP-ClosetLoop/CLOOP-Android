@@ -1,6 +1,6 @@
 package com.example.cloop.data.remote
 
-import com.example.cloop.data.model.clothes.ImageUploadResponse
+import com.example.cloop.data.model.cloth.ImageUploadResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Header
