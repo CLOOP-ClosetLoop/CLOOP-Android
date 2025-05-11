@@ -1,27 +1,24 @@
-package com.example.cloop.ui.onboarding
+package com.example.cloop.presentation.onboarding
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.cloop.MainActivity
-import com.example.cloop.R
-import com.example.cloop.data.model.auth.LoginResponse
+import com.example.cloop.TokenManager
 import com.example.cloop.databinding.ActivityLoginBinding
 import com.example.cloop.repository.AuthRepository
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private val loginViewModel: LoginViewModel by viewModels()
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private val GOOGLE_SIGN_IN = 1000
@@ -33,6 +30,19 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 자동 로그인 처리
+        loginViewModel.autoLoginSuccess.observe(this) { success ->
+            if (success) {
+                Log.d("Login", "✅ 자동 로그인 성공")
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else {
+                Log.d("Login", "자동 로그인 실패 또는 토큰 없음")
+            }
+        }
+        loginViewModel.attemptAutoLogin(this)
+
 
         // 1. 구글 로그인 옵션 설정
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -69,8 +79,17 @@ class LoginActivity : AppCompatActivity() {
                         onSuccess = { response ->
                             // 회원이면 로그인 성공
                             if (response.status == "login") {
-                                Log.d("Login", "✅ 로그인 성공: ${response.accessToken}")
-                                // TODO: 토큰 저장 등
+                                Log.d("Login", "✅ 로그인 성공: ${response.access_token}")
+
+                                TokenManager.saveTokens(
+                                    context = this,
+                                    accessToken = response.access_token ?: "",
+                                    refreshToken = response.refresh_token ?: ""
+                                )
+
+                                Log.d("TokenCheck", "받은 accessToken: ${response.access_token}")
+                                Log.d("TokenCheck", "받은 refreshToken: ${response.refresh_token}")
+
                                 startActivity(Intent(this, MainActivity::class.java))
                                 finish()
                             } else if (response.status.contains("회원가입이 필요")) {
@@ -78,10 +97,17 @@ class LoginActivity : AppCompatActivity() {
                                 val googleId = response.googleId!!
                                 AuthRepository().signupWithGoogle(
                                     googleId,
-                                    "닉네임 입력",  // TODO: 사용자 입력 받아도 됨
+                                    "닉네임 입력",
                                     "여성",
                                     onSuccess = { signUpRes ->
-                                        Log.d("Login", "✅ 회원가입 성공: ${signUpRes.accessToken}")
+                                        Log.d("Login", "✅ 회원가입 성공: ${signUpRes.access_token}")
+
+                                        TokenManager.saveTokens(
+                                            context = this,
+                                            accessToken = signUpRes.access_token ?: "",
+                                            refreshToken = signUpRes.refresh_token ?: ""
+                                        )
+
                                         startActivity(Intent(this, MainActivity::class.java))
                                         finish()
                                     },

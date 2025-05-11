@@ -3,8 +3,6 @@ package com.example.cloop.repository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.view.WindowInsetsAnimation
-import com.example.cloop.data.model.auth.GoogleLoginRequest
 import com.example.cloop.data.model.auth.LoginResponse
 import com.example.cloop.data.remote.RetrofitClient
 
