@@ -67,4 +67,10 @@
             app:argType="string" />
     </fragment>
 
+    <fragment
+        android:id="@+id/aiClassifierFragment2"
+        android:name="com.example.cloop.presentation.closet.AiClassifierFragment2"
+        android:label="fragment_ai_classifier2"
+        tools:layout="@layout/fragment_ai_classifier2" />
+
 </navigation>
