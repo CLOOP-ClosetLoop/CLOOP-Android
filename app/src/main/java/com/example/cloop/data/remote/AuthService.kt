@@ -8,9 +8,9 @@ import retrofit2.http.POST
 
 interface AuthService {
     @POST("/auth/google")
-    fun loginWithGoogle(@Body body: GoogleLoginRequest): Call<LoginResponse>
+    fun loginWithGoogle(@Body body: Map<String, String>): Call<LoginResponse>
 
     @POST("/auth/google/signup")
-    fun signupWithGoogle(@Body body: GoogleLoginRequest): Call<LoginResponse>
+    fun signupWithGoogle(@Body body: Map<String, String>): Call<LoginResponse>
 }
 
