@@ -53,30 +53,37 @@
                 android:paddingBottom="12dp">
                 <TextView
                     android:id="@+id/btnTop"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="상의" />
                 <TextView
                     android:id="@+id/btnBottom"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="하의" />
                 <TextView
                     android:id="@+id/btnOuter"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="아우터" />
                 <TextView
                     android:id="@+id/btnShoes"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="신발" />
                 <TextView
                     android:id="@+id/btnBag"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="가방" />
                 <TextView
                     android:id="@+id/btnHat"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="모자" />
                 <TextView
                     android:id="@+id/btnEtc"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="기타" />
             </com.google.android.flexbox.FlexboxLayout>

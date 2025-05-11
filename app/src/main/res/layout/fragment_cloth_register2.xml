@@ -181,10 +181,12 @@
                 android:paddingBottom="12dp">
                 <TextView
                     android:id="@+id/btn_summer"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="여름" />
                 <TextView
                     android:id="@+id/btn_winter"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
                     android:text="겨울" />
             </com.google.android.flexbox.FlexboxLayout>

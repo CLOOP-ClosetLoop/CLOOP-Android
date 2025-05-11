@@ -29,6 +29,7 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Retrofit
 import java.io.File
 import android.Manifest
+import android.widget.TextView
 import com.example.cloop.TokenManager
 
 class ClothRegisterFragment : Fragment() {
@@ -41,6 +42,8 @@ class ClothRegisterFragment : Fragment() {
     private var imageUri: Uri? = null
     private val IMAGE_PICK_CODE = 1000
     private val CAMERA_CODE = 1001
+
+    private lateinit var categoryButtons: List<TextView>
 
 
     override fun onCreateView(
@@ -57,11 +60,27 @@ class ClothRegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 카테고리 버튼 리스트 정의
+        categoryButtons = listOf(
+            binding.btnTop,
+            binding.btnBottom,
+            binding.btnOuter,
+            binding.btnShoes,
+            binding.btnBag,
+            binding.btnHat,
+            binding.btnEtc
+        )
+        // 클릭 리스너 공통 처리
+        categoryButtons.forEach { button ->
+            button.setOnClickListener {
+                updateCategorySelection(button)
+            }
+        }
+
         // 뒤로가기
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
-
         // 다음 화면으로 이동
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.clothRegisterFragment2)
@@ -81,6 +100,12 @@ class ClothRegisterFragment : Fragment() {
             openCamera()  // 권한 승인 -> 다시 카메라 실행
         } else {
             Toast.makeText(requireContext(), "카메라 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun updateCategorySelection(selectedButton: TextView) {
+        categoryButtons.forEach { button ->
+            button.isSelected = (button == selectedButton)
         }
     }
 
