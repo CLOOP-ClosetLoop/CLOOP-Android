@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         // 자동 로그인 처리
         loginViewModel.autoLoginSuccess.observe(this) { success ->
             if (success) {
-                Log.d("Login", "✅ 자동 로그인 성공")
+                Log.d("Login", "자동 로그인 성공")
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
                         onSuccess = { response ->
                             // 회원이면 로그인 성공
                             if (response.status == "login") {
-                                Log.d("Login", "✅ 로그인 성공: ${response.access_token}")
+                                Log.d("Login", "로그인 성공: ${response.access_token}")
 
                                 TokenManager.saveTokens(
                                     context = this,
@@ -100,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                                     "닉네임 입력",
                                     "여성",
                                     onSuccess = { signUpRes ->
-                                        Log.d("Login", "✅ 회원가입 성공: ${signUpRes.access_token}")
+                                        Log.d("Login", "회원가입 성공: ${signUpRes.access_token}")
 
                                         TokenManager.saveTokens(
                                             context = this,
@@ -112,17 +112,15 @@ class LoginActivity : AppCompatActivity() {
                                         finish()
                                     },
                                     onFailure = { e ->
-                                        Log.e("Login", "❌ 회원가입 실패: ${e.message}")
                                     }
                                 )
                             }
                         },
                         onFailure = { e ->
-                            Log.e("Login", "❌ 로그인 실패: ${e.message}")
                         }
                     )
                 } else {
-                    Log.e("Login", "❌ idToken == null")
+                    Log.e("Login", "idToken == null")
                 }
             } catch (e: ApiException) {
                 Log.e("Login", "Google 로그인 실패: ${e.statusCode}")

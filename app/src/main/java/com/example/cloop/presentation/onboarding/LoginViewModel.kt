@@ -35,19 +35,15 @@ class LoginViewModel : ViewModel() {
                     if (accessToken.isNotEmpty()) {
                         TokenManager.saveTokens(context, accessToken, refreshToken)
                         _autoLoginSuccess.postValue(true)
-                        Log.d("AutoLogin", "✅ 자동 로그인 성공: $accessToken")
                     } else {
-                        Log.e("AutoLogin", "🚨 응답은 성공했지만 accessToken이 없음")
                         _autoLoginSuccess.postValue(false)
                     }
                 } else {
-                    Log.e("AutoLogin", "🚨 응답 실패: ${response.code()}")
                     _autoLoginSuccess.postValue(false)
                 }
             }
 
             override fun onFailure(call: Call<AccessTokenResponse>, t: Throwable) {
-                Log.e("AutoLogin", "🚨 네트워크 오류: ${t.message}")
                 _autoLoginSuccess.postValue(false)
             }
         })
