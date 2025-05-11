@@ -11,5 +11,9 @@ object RetrofitClient {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+    // 구글 로그인, 회원가입
     val authService: AuthService = retrofit.create(AuthService::class.java)
+
+    // 옷 등록 - 이미지
+    val clothService: ClothService = retrofit.create(ClothService::class.java)
 }
