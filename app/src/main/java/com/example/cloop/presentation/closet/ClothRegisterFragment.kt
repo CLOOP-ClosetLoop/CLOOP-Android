@@ -1,7 +1,6 @@
 package com.example.cloop.presentation.closet
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -26,16 +25,19 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import retrofit2.Retrofit
 import java.io.File
 import android.Manifest
 import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import com.example.cloop.TokenManager
+import com.example.cloop.presentation.closet.viewmodel.ClothRegisterViewModel
 
 class ClothRegisterFragment : Fragment() {
 
     private var _binding: FragmentClothRegisterBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: ClothRegisterViewModel by activityViewModels()
 
     private val clothService = RetrofitClient.clothService
 
@@ -60,7 +62,7 @@ class ClothRegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 카테고리 버튼 리스트 정의
+
         categoryButtons = listOf(
             binding.btnTop,
             binding.btnBottom,
@@ -70,10 +72,11 @@ class ClothRegisterFragment : Fragment() {
             binding.btnHat,
             binding.btnEtc
         )
-        // 클릭 리스너 공통 처리
+        // 카테고리 선택, 뷰모델에 저장
         categoryButtons.forEach { button ->
             button.setOnClickListener {
                 updateCategorySelection(button)
+                viewModel.category = button.text.toString()
             }
         }
 
@@ -215,6 +218,7 @@ class ClothRegisterFragment : Fragment() {
                 val response = clothService.uploadClothImage(bearerToken, multipart)
                 if (response.isSuccessful) {
                     val imageUrl = response.body()?.imageUrl
+                    viewModel.imageUrl = imageUrl
                     Log.d("ImageUpload", "업로드 성공: $imageUrl")
                     Toast.makeText(requireContext(), "업로드 성공!", Toast.LENGTH_SHORT).show()
                 } else {
