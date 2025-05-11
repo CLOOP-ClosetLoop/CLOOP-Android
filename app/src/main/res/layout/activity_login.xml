@@ -19,9 +19,9 @@
 
     <ImageView
         android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/btn_login"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:src="@drawable/android_neutral_sq_ctn"
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
