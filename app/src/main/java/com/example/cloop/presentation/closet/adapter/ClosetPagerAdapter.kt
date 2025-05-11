@@ -1,8 +1,8 @@
-package com.example.cloop.ui.closet.adapter
+package com.example.cloop.presentation.closet.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.cloop.ui.closet.BlankClosetTabFragment
+import com.example.cloop.presentation.closet.BlankClosetTabFragment
 
 class ClosetPagerAdapter(
     fragment: Fragment,

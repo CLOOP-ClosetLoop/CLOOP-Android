@@ -1,4 +1,4 @@
-package com.example.cloop.ui.home.calender
+package com.example.cloop.presentation.home.calender
 
 import android.graphics.Color
 import com.prolificinteractive.materialcalendarview.CalendarDay

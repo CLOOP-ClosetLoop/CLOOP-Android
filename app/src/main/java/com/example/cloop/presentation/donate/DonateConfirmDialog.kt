@@ -1,10 +1,9 @@
-package com.example.cloop.ui.donate
+package com.example.cloop.presentation.donate
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import com.example.cloop.R
 import com.example.cloop.databinding.DialogDonateConfirmBinding
 
 class DonateConfirmDialog : DialogFragment() {

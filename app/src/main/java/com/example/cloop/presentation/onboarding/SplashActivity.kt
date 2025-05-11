@@ -1,4 +1,4 @@
-package com.example.cloop.ui.onboarding
+package com.example.cloop.presentation.onboarding
 
 import android.content.Intent
 import android.os.Bundle

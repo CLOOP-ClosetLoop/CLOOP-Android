@@ -1,4 +1,4 @@
-package com.example.cloop.ui.donate
+package com.example.cloop.presentation.donate
 
 import android.app.AlertDialog
 import android.app.Dialog

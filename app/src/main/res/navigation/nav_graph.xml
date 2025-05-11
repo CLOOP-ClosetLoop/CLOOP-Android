@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_home"
-        android:name="com.example.cloop.ui.home.HomeFragment"
+        android:name="com.example.cloop.presentation.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
@@ -17,49 +17,49 @@
 
     <fragment
         android:id="@+id/fragment_closet"
-        android:name="com.example.cloop.ui.closet.ClosetFragment"
+        android:name="com.example.cloop.presentation.closet.ClosetFragment"
         android:label="Closet"
         tools:layout="@layout/fragment_closet" />
 
     <fragment
         android:id="@+id/fragment_donate"
-        android:name="com.example.cloop.ui.donate.DonateFragment"
+        android:name="com.example.cloop.presentation.donate.DonateFragment"
         android:label="Donate"
         tools:layout="@layout/fragment_donate" />
 
     <fragment
         android:id="@+id/fragment_mypage"
-        android:name="com.example.cloop.ui.mypage.MyPageFragment"
+        android:name="com.example.cloop.presentation.mypage.MyPageFragment"
         android:label="MyPage"
         tools:layout="@layout/fragment_my_page" />
 
     <fragment
         android:id="@+id/clothRegisterFragment"
-        android:name="com.example.cloop.ui.closet.ClothRegisterFragment"
+        android:name="com.example.cloop.presentation.closet.ClothRegisterFragment"
         android:label="fragment_cloth_register"
         tools:layout="@layout/fragment_cloth_register" />
 
     <fragment
         android:id="@+id/clothRegisterFragment2"
-        android:name="com.example.cloop.ui.closet.ClothRegisterFragment2"
+        android:name="com.example.cloop.presentation.closet.ClothRegisterFragment2"
         android:label="fragment_cloth_register2"
         tools:layout="@layout/fragment_cloth_register2" />
 
     <fragment
         android:id="@+id/aiClassifierFragment"
-        android:name="com.example.cloop.ui.closet.AiClassifierFragment"
+        android:name="com.example.cloop.presentation.closet.AiClassifierFragment"
         android:label="fragment_ai_classifier"
         tools:layout="@layout/fragment_ai_classifier" />
 
     <fragment
         android:id="@+id/inactiveClosetFragment"
-        android:name="com.example.cloop.ui.closet.InactiveClosetFragment"
+        android:name="com.example.cloop.presentation.closet.InactiveClosetFragment"
         android:label="fragment_inactive_closet"
         tools:layout="@layout/fragment_inactive_closet" />
 
     <fragment
         android:id="@+id/outfitRegisterFragment"
-        android:name="com.example.cloop.ui.home.OutfitRegisterFragment"
+        android:name="com.example.cloop.presentation.home.OutfitRegisterFragment"
         android:label="fragment_outfit_register"
         tools:layout="@layout/fragment_outfit_register">
         <argument
