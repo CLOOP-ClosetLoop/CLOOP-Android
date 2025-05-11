@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AI 카테고리 자동 분류"
+            android:text="옷 AI 등록"
             android:textColor="@color/black"
             android:fontFamily="@font/pretendard"
             android:textSize="18sp"
@@ -52,7 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AI를 활용해 카테고리와 색상을 자동으로 분류해 보세요!"
+                android:text="AI를 활용해 옷을 자동으로 등록해 보세요!"
                 android:fontFamily="@font/pretendard"
                 android:textStyle="bold"
                 android:textSize="13sp"
@@ -86,6 +86,7 @@
         </FrameLayout>
 
         <ImageView
+            android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/btn_classifier"
