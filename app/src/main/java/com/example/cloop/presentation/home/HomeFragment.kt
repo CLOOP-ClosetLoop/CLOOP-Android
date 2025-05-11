@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.cloop.R
 import com.example.cloop.databinding.DialogRegisterClothBinding
@@ -38,19 +40,27 @@ class HomeFragment : Fragment() {
         }
         // '옷장 보기' 클릭 시 ClosetFragment 로 이동
         binding.llCloset.setOnClickListener {
-            findNavController().navigate(R.id.fragment_closet)
+
+            val navController = NavHostFragment.findNavController(
+                requireActivity().supportFragmentManager.findFragmentById(R.id.fcv_main)!!
+            )
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.fragment_home, false)
+                .build()
+            navController.navigate(R.id.fragment_closet, null, navOptions)
+
         }
 
         val calendarView = binding.calenderView
 
-        // ✅ 날짜 선택하면 저장
+        // 날짜 선택하면 저장
         calendarView.setOnDateChangedListener { _, date, selected ->
             if (selected) {
                 selectedDate = date
             }
         }
 
-        // ✅ 플러스 버튼 클릭 시 날짜 넘기며 이동
+        // 플러스 버튼 클릭 시 날짜 넘기며 이동
         binding.btnPlus.setOnClickListener {
             selectedDate?.let { date ->
                 val dateStr = date.date.toString()  // LocalDate → "2025-04-23"

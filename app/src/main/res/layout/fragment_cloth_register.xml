@@ -53,32 +53,39 @@
                 android:paddingBottom="12dp">
                 <TextView
                     android:id="@+id/btnTop"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="상의" />
+                    android:text="TOP" />
                 <TextView
                     android:id="@+id/btnBottom"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="하의" />
+                    android:text="BOTTOM" />
                 <TextView
                     android:id="@+id/btnOuter"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="아우터" />
+                    android:text="OUTER" />
                 <TextView
                     android:id="@+id/btnShoes"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="신발" />
+                    android:text="SHOES" />
                 <TextView
                     android:id="@+id/btnBag"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="가방" />
+                    android:text="BAG" />
                 <TextView
                     android:id="@+id/btnHat"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="모자" />
+                    android:text="HAT" />
                 <TextView
                     android:id="@+id/btnEtc"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="기타" />
+                    android:text="ETC" />
             </com.google.android.flexbox.FlexboxLayout>
 
             <LinearLayout

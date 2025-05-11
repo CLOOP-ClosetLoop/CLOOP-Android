@@ -86,7 +86,7 @@
                 android:id="@+id/et_date"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:hint="YYYY / MM"
+                android:hint="YYYY-MM-DD"
                 android:textSize="16sp"
                 android:textColorHint="#828892"
                 android:textColor="@color/black"
@@ -181,12 +181,14 @@
                 android:paddingBottom="12dp">
                 <TextView
                     android:id="@+id/btn_summer"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="여름" />
+                    android:text="SUMMER" />
                 <TextView
                     android:id="@+id/btn_winter"
+                    android:background="@drawable/bg_btn_category"
                     style="@style/CategoryButtonStyle"
-                    android:text="겨울" />
+                    android:text="WINTER" />
             </com.google.android.flexbox.FlexboxLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
