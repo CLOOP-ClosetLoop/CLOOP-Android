@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="15dp"
+        android:padding="14dp"
         android:gravity="center_horizontal">
 
         <ImageView
@@ -23,6 +23,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_placeholder_image" />
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="옷 이름"
@@ -41,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="상의"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_2"
                 android:fontFamily="@font/pretendard"
@@ -51,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" / "
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_2"
                 android:fontFamily="@font/pretendard"
@@ -62,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="브랜드"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_2"
                 android:fontFamily="@font/pretendard"
@@ -73,13 +74,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="검정"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_2"
                 android:fontFamily="@font/pretendard"
@@ -88,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" / "
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_2"
                 android:fontFamily="@font/pretendard"
@@ -98,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="여름"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_2"
                 android:fontFamily="@font/pretendard"
@@ -109,10 +111,11 @@
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:text="2023년 3월 구매"
             android:textColor="@color/primary_2"
             android:fontFamily="@font/pretendard"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:gravity="center"/>
     </LinearLayout>
