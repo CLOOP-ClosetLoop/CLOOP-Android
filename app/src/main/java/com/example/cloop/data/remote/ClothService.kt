@@ -1,11 +1,13 @@
 package com.example.cloop.data.remote
 
+import com.example.cloop.data.model.cloth.Cloth
 import com.example.cloop.data.model.cloth.ClothRegisterRequest
 import com.example.cloop.data.model.cloth.ImageUploadResponse
 import com.example.cloop.data.model.cloth.RegisterClothResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -27,5 +29,9 @@ interface ClothService {
         @Header("Authorization") token: String,
         @Body request: ClothRegisterRequest
     ): Response<RegisterClothResponse>
+
+    // 전체 옷 정보 조회
+    @GET("/clothes")
+    suspend fun getClothes(): Response<List<Cloth>>
 
 }
