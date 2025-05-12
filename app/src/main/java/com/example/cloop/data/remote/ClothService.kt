@@ -32,6 +32,8 @@ interface ClothService {
 
     // 전체 옷 정보 조회
     @GET("/clothes")
-    suspend fun getClothes(): Response<List<Cloth>>
+    suspend fun getClothes(
+        @Header("Authorization") accessToken: String
+    ): Response<List<Cloth>>
 
 }
