@@ -2,7 +2,7 @@ package com.example.cloop.presentation.closet.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.cloop.presentation.closet.BlankClosetTabFragment
+import com.example.cloop.presentation.closet.ClosetTabFragment
 
 class ClosetPagerAdapter(
     fragment: Fragment,
@@ -12,6 +12,6 @@ class ClosetPagerAdapter(
     override fun getItemCount() = categories.size
 
     override fun createFragment(position: Int): Fragment {
-        return BlankClosetTabFragment.newInstance(categories[position])
+        return ClosetTabFragment.newInstance(categories[position])
     }
 }
