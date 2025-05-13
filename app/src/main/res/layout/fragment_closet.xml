@@ -23,7 +23,7 @@
                 android:id="@+id/tv_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="나의 옷장"
+                android:text="My Closet"
                 android:fontFamily="@font/pretendard"
                 android:textStyle="bold"
                 android:textSize="24sp"
@@ -64,7 +64,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="오래 안 입은 옷 보러가기"
+                                android:text="	View Unworn Clothes"
+                                android:fontFamily="@font/pretendard"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 android:textSize="14sp" />

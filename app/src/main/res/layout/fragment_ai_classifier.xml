@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="옷 AI 등록"
+            android:text="AI Clothing Classification"
             android:textColor="@color/black"
             android:fontFamily="@font/pretendard"
             android:textSize="18sp"
@@ -52,7 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AI를 활용해 옷을 자동으로 등록해 보세요!"
+                android:text="Use AI to classify clothes automatically!"
                 android:fontFamily="@font/pretendard"
                 android:textStyle="bold"
                 android:textSize="13sp"

@@ -24,7 +24,7 @@ class DonateAdapter(
 
         fun bind(item: DonationCloth) {
             binding.tvName.text = item.clothName
-            binding.tvLastWorn.text = "${item.lastWornAt} \n마지막 착용"
+            binding.tvLastWorn.text = "${item.lastWornAt} \nLast worn"
             Glide.with(binding.ivCloth.context)
                 .load(item.imageUrl)
                 .placeholder(R.drawable.ic_placeholder_image)

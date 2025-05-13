@@ -19,7 +19,7 @@ class ClosetItemAdapter : ListAdapter<Cloth, ClosetItemAdapter.ViewHolder>(DiffC
             binding.tvName.text = cloth.clothName
             binding.tvCategory.text = cloth.category
             binding.tvBrand.text = cloth.brand
-            binding.tvDate.text = "${cloth.purchasedAt} 구매"
+            binding.tvDate.text = "Purchased\n${cloth.purchasedAt}"
             binding.tvColor.text = cloth.color
             binding.tvSeason.text = cloth.season
             Glide.with(binding.ivCloth)

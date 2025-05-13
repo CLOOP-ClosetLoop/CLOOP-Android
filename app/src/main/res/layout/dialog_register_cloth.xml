@@ -14,14 +14,14 @@
             android:layout_width="14dp"
             android:layout_height="14dp"
             android:src="@drawable/btn_cancel"
-            android:layout_alignParentEnd="true"
-            android:contentDescription="닫기 버튼" />
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="새 옷을 어떻게 등록하시겠습니까?"
+            android:text="How would you like to register your new clothes?"
+            android:fontFamily="@font/pretendard"
             android:textColor="@color/primary_2"
             android:textSize="15sp"
             android:textStyle="bold"

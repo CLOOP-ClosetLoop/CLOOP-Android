@@ -23,7 +23,7 @@
                 android:id="@+id/tv_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="착장 등록"
+                android:text="Outfit Log"
                 android:fontFamily="@font/pretendard"
                 android:textStyle="bold"
                 android:textSize="22sp"
@@ -74,7 +74,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="새 옷\n등록하기"
+                                android:text="Add New Clothes"
+                                android:fontFamily="@font/pretendard"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 android:textSize="16sp" />
@@ -104,7 +105,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="옷장\n보기"
+                            android:text="View Closet"
                             android:fontFamily="@font/pretendard"
                             android:textStyle="bold"
                             android:textSize="16sp"

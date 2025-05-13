@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="기부가 완료되었습니다."
+        android:text="Donation completed."
         android:fontFamily="@font/pretendard"
         android:textStyle="bold"
         android:textSize="17sp"

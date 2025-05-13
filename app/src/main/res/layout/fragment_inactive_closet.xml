@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="오래 안 입은 옷 보기"
+            android:text="Unworn Clothes"
             android:textColor="@color/black"
             android:fontFamily="@font/pretendard"
             android:textSize="18sp"
@@ -52,7 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="최근 6개월 동안 착용 이력이 없다면,\n자동으로 기부 페이지로 넘어갑니다."
+                android:text="If an item hasn't been worn in the past 6 months, \nit will be automatically moved to the donation page."
                 android:fontFamily="@font/pretendard"
                 android:textStyle="bold"
                 android:textSize="13sp"

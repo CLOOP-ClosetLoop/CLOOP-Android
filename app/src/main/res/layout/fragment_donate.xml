@@ -15,7 +15,7 @@
             android:id="@+id/tv_donate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="기부하기"
+            android:text="Donate"
             android:textColor="@color/black"
             android:fontFamily="@font/pretendard"
             android:textSize="22sp"
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기부할 옷을 선택하면, 기부가 진행됩니다.\n오래 안 입은 옷들을 기부해보세요!"
+                android:text="Select the clothes you wish to donate. \nConsider donating items you haven’t worn in a while!"
                 android:fontFamily="@font/pretendard"
                 android:textStyle="bold"
                 android:textSize="13sp"
