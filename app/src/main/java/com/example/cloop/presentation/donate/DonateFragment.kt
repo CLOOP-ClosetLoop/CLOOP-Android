@@ -1,16 +1,28 @@
 package com.example.cloop.presentation.donate
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.cloop.TokenManager
+import com.example.cloop.data.remote.RetrofitClient
+import com.example.cloop.data.repository.DonateRepository
 import com.example.cloop.databinding.FragmentDonateBinding
+import com.example.cloop.presentation.donate.adapter.DonateAdapter
+import com.example.cloop.presentation.donate.viewmodel.DonateViewModel
+import com.example.cloop.presentation.donate.viewmodel.DonateViewModelFactory
 
 class DonateFragment : Fragment() {
 
     private var _binding: FragmentDonateBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var viewModel: DonateViewModel
+    private lateinit var adapter: DonateAdapter
 
 
     override fun onCreateView(
@@ -25,10 +37,27 @@ class DonateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 임시 테스트로 !!!!!!!! caution 이미지 클릭 시 다이얼로그 띄움
-        binding.ivCaution.setOnClickListener {
-            DonateConfirmDialog().show(parentFragmentManager, "DonateConfirmDialog")
+        adapter = DonateAdapter { clothItem ->
+            DonateConfirmDialog(
+                clothId = clothItem.clothId,
+                viewModel = viewModel
+            ).show(parentFragmentManager, "DonateConfirmDialog")
         }
+
+        binding.rvInactiveClothes.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvInactiveClothes.adapter = adapter
+
+        val repository = DonateRepository(RetrofitClient.donateService)
+        val factory = DonateViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, factory)[DonateViewModel::class.java]
+
+        viewModel.donationClothes.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
+
+        val token = TokenManager.getAccessToken(requireContext()) ?: ""
+        viewModel.fetchDonationClothes(token)
+
     }
 
     override fun onDestroyView() {

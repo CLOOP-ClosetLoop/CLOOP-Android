@@ -34,4 +34,8 @@ object RetrofitClient {
 
     // ai 옷 등록
     val aiService: AiService by lazy { retrofit.create(AiService::class.java) }
+
+    // 기부 페이지
+    val donateService: DonateService = retrofit.create(DonateService::class.java)
+
 }

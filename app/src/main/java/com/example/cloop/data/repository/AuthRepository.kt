@@ -1,4 +1,4 @@
-package com.example.cloop.repository
+package com.example.cloop.data.repository
 
 import retrofit2.Call
 import retrofit2.Callback

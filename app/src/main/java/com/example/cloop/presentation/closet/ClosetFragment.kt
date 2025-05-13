@@ -38,14 +38,12 @@ class ClosetFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // 토큰 불러오기
+
         val accessToken = TokenManager.getAccessToken(requireContext())
 
         if (!accessToken.isNullOrEmpty()) {
             viewModel.fetchClothes(accessToken)
         } else {
-//            Toast.makeText(requireContext(), "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
-//            findNavController().navigate(R.id.loginFragment) // 예시
             return
         }
 
