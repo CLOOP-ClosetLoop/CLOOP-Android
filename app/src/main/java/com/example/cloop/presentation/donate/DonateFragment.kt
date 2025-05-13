@@ -38,8 +38,10 @@ class DonateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = DonateAdapter { clothItem ->
-            // 클릭 시 다이얼로그 표시
-            DonateConfirmDialog().show(parentFragmentManager, "DonateConfirmDialog")
+            DonateConfirmDialog(
+                clothId = clothItem.clothId,
+                viewModel = viewModel
+            ).show(parentFragmentManager, "DonateConfirmDialog")
         }
 
         binding.rvInactiveClothes.layoutManager = GridLayoutManager(requireContext(), 2)

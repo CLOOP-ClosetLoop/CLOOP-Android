@@ -12,4 +12,14 @@ class DonateRepository(private val donateService: DonateService) {
             null
         }
     }
+
+
+    suspend fun confirmDonation(token: String, clothId: Int): Boolean {
+        return try {
+            val response = donateService.confirmDonation("Bearer $token", clothId)
+            response.isSuccessful
+        } catch (e: Exception) {
+            false
+        }
+    }
 }

@@ -19,4 +19,17 @@ class DonateViewModel(private val repository: DonateRepository) : ViewModel() {
             _donationClothes.value = result ?: emptyList()
         }
     }
+
+
+    fun confirmDonation(token: String, clothId: Int, onComplete: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val success = repository.confirmDonation(token, clothId)
+            onComplete(success)
+        }
+    }
+
+
+    fun removeClothItem(clothId: Int) {
+        _donationClothes.value = _donationClothes.value?.filter { it.clothId != clothId }
+    }
 }
