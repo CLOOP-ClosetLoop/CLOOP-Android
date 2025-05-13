@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.cloop.MainActivity
 import com.example.cloop.TokenManager
 import com.example.cloop.databinding.ActivityLoginBinding
-import com.example.cloop.repository.AuthRepository
+import com.example.cloop.data.repository.AuthRepository
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
