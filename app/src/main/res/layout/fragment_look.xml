@@ -75,28 +75,21 @@
                     android:gravity="center_vertical"
                     android:layout_marginBottom="10dp">
 
-                    <ImageView
-                        android:id="@+id/btnGoToCloset"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/ic_logo_hanger"
-                        android:layout_marginEnd="8dp" />
-
                     <TextView
-                        android:id="@+id/tv_selected_clothes"
+                        android:id="@+id/tv_look_clothes"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="36dp"
                         android:layout_weight="1"
                         android:background="@drawable/background_radius_green2"
-                        android:text="Outfit on YYYY-MM-DD"
+                        android:text="Outfit Items"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="17sp"
                         android:fontFamily="@font/pretendard"/>
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_selected_clothes"
+                    android:id="@+id/rv_look_clothes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false"
