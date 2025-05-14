@@ -6,5 +6,5 @@ data class LoginResponse(
     val nickname: String? = null,
     val refresh_token: String? = null,
     val userId: Int? = null,
-    val googleId: String? = null  // "회원가입 필요" 응답에 포함
+    val googleId: String? = null
 )

@@ -6,6 +6,6 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 class CLOOP : Application() {
     override fun onCreate() {
         super.onCreate()
-        AndroidThreeTen.init(this)  // 날짜
+        AndroidThreeTen.init(this)
     }
 }

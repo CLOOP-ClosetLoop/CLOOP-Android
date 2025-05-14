@@ -10,7 +10,7 @@ class ClosetSelectPagerAdapter(
     fragment: Fragment,
     private val categories: List<String>,
     private val clothes: List<Cloth>,
-    private val onSelectionChanged: (List<Cloth>) -> Unit // ✅ 람다로 바꿔줌
+    private val onSelectionChanged: (List<Cloth>) -> Unit
 ) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int = categories.size
@@ -20,7 +20,7 @@ class ClosetSelectPagerAdapter(
         val filteredClothes = clothes.filter { it.category == category }
 
         return CategoryClothSelectFragment.newInstance(category, filteredClothes).apply {
-            this.onSelectionChanged = onSelectionChanged // ✅ 외부에서 받은 람다 할당
+            this.onSelectionChanged = onSelectionChanged
         }
     }
 }

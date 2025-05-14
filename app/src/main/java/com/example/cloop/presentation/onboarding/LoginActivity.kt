@@ -31,28 +31,22 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 자동 로그인 처리
         loginViewModel.autoLoginSuccess.observe(this) { success ->
             if (success) {
-                Log.d("Login", "자동 로그인 성공")
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
-            } else {
-                Log.d("Login", "자동 로그인 실패 또는 토큰 없음")
             }
         }
         loginViewModel.attemptAutoLogin(this)
 
 
-        // 1. 구글 로그인 옵션 설정
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("282924798851-2lhulrjvhnhs963tnjq88n4iq72a8lia.apps.googleusercontent.com") // 콘솔에서 받은 웹클라이언트 ID
+            .requestIdToken("282924798851-2lhulrjvhnhs963tnjq88n4iq72a8lia.apps.googleusercontent.com")
             .requestEmail()
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        // 2. 버튼 클릭 시 로그인 실행
         binding.loginBtn.setOnClickListener {
             val signInIntent = googleSignInClient.signInIntent
             startActivityForResult(signInIntent, GOOGLE_SIGN_IN)
@@ -77,7 +71,6 @@ class LoginActivity : AppCompatActivity() {
                     AuthRepository().loginWithGoogle(
                         idToken,
                         onSuccess = { response ->
-                            // 회원이면 로그인 성공
                             if (response.status == "login") {
                                 Log.d("Login", "로그인 성공: ${response.access_token}")
 

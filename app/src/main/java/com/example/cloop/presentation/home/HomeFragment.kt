@@ -34,11 +34,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // '새 옷 등록하기' 클릭 시 다이얼로그 띄움
         binding.llRegister.setOnClickListener {
             showRegisterClothDialog()
         }
-        // '옷장 보기' 클릭 시 ClosetFragment 로 이동
+
         binding.llCloset.setOnClickListener {
 
             val navController = NavHostFragment.findNavController(
@@ -63,7 +62,7 @@ class HomeFragment : Fragment() {
         // 플러스 버튼 클릭 시 날짜 넘기며 이동
         binding.btnPlus.setOnClickListener {
             selectedDate?.let { date ->
-                val dateStr = date.date.toString()  // LocalDate → "2025-04-23"
+                val dateStr = date.date.toString()
                 val action = HomeFragmentDirections
                     .actionFragmentHomeToFragmentOutfitRegister(dateStr)
                 findNavController().navigate(action)
@@ -84,16 +83,15 @@ class HomeFragment : Fragment() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
 
-        // 닫기 버튼
         dialogBinding.btnClose.setOnClickListener {
             dialog.dismiss()
         }
-        // 직접등록 버튼 클릭 시
+
         dialogBinding.btnRegister.setOnClickListener {
             dialog.dismiss()
             findNavController().navigate(R.id.clothRegisterFragment)
         }
-        // AI 분류 버튼 클릭 시
+
         dialogBinding.btnAi.setOnClickListener {
             dialog.dismiss()
             findNavController().navigate(R.id.aiClassifierFragment)

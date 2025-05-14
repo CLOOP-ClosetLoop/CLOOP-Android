@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // 하단 네비게이션 설정
     private fun setupBottomNavigation() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fcv_main) as NavHostFragment
@@ -40,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         setBottomNaviVisible(navController)
     }
 
-    // 하단바 표시 여부 설정
     private fun setBottomNaviVisible(navController: NavController) {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bnvMain.visibility = when (destination.id) {

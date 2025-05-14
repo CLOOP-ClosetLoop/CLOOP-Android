@@ -30,7 +30,6 @@ class DonateAdapter(
                 .placeholder(R.drawable.ic_placeholder_image)
                 .into(binding.ivCloth)
 
-            // 아이템 클릭 시 콜백 실행
             binding.root.setOnClickListener {
                 onItemClick(item)
             }

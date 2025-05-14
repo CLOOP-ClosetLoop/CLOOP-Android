@@ -21,10 +21,10 @@ class ClosetViewModel(private val clothService: ClothService) : ViewModel() {
                 if (response.isSuccessful) {
                     _allClothes.value = response.body() ?: emptyList()
                 } else {
-                    Log.e("ClosetViewModel", "응답 실패: ${response.code()}")
+                    Log.e("ClosetViewModel", "Response failure: ${response.code()}")
                 }
             } catch (e: Exception) {
-                Log.e("ClosetViewModel", "API 오류: ${e.localizedMessage}")
+                Log.e("ClosetViewModel", "API Error: ${e.localizedMessage}")
             }
         }
     }

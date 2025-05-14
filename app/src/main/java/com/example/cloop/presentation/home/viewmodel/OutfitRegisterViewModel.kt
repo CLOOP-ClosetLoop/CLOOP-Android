@@ -32,12 +32,10 @@ class OutfitRegisterViewModel : ViewModel() {
         _allClothes.value = clothes
     }
 
-    // ✅ 선택 여부 확인 함수
     fun isClothSelected(clothId: Int): Boolean {
         return selectedClothList.value?.any { it.clothId == clothId } ?: false
     }
 
-    // ✅ 선택/해제 토글 함수
     fun toggleClothSelection(cloth: Cloth) {
         val currentList = selectedClothList.value?.toMutableList() ?: mutableListOf()
         if (currentList.any { it.clothId == cloth.clothId }) {
@@ -77,14 +75,10 @@ class OutfitRegisterViewModel : ViewModel() {
 
                     if (registerResponse.isSuccessful) {
                         registerResult.value = registerResponse.body()
-                    } else {
-                        Log.e("RegisterLook", "등록 실패: ${registerResponse.code()}")
                     }
-                } else {
-                    Log.e("UploadImage", "업로드 실패: ${uploadResponse.code()}")
                 }
             } catch (e: Exception) {
-                Log.e("RegisterLook", "오류: ${e.localizedMessage}")
+                Log.e("RegisterLook", "Error: ${e.localizedMessage}")
             }
         }
     }

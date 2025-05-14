@@ -20,6 +20,6 @@ interface DonateService {
         @Header("Authorization") token: String,
         @Path("clothId") clothId: Int,
         @Body body: Map<String, Boolean> = mapOf("confirmed" to true)
-    ): Response<Unit>  // 또는 Response<DonationResult> 원하면 추후 확장
+    ): Response<Unit>
 
 }

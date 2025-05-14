@@ -12,7 +12,7 @@ import com.example.cloop.presentation.home.viewmodel.OutfitRegisterViewModel
 
 class ClothSelectAdapter(
     private val clothes: List<Cloth>,
-    private val viewModel: OutfitRegisterViewModel // ✅ ViewModel에서 선택 상태 관리
+    private val viewModel: OutfitRegisterViewModel
 ) : RecyclerView.Adapter<ClothSelectAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemSelectedClothBinding) :
@@ -30,7 +30,7 @@ class ClothSelectAdapter(
                 .placeholder(R.drawable.ic_placeholder_image)
                 .into(binding.ivCloth)
 
-            val isSelected = viewModel.isClothSelected(item.clothId) // ✅ 선택 상태 가져오기
+            val isSelected = viewModel.isClothSelected(item.clothId)
             val color = if (isSelected) {
                 ContextCompat.getColor(binding.root.context, R.color.primary_2)
             } else {
@@ -39,7 +39,7 @@ class ClothSelectAdapter(
             binding.cardView.setCardBackgroundColor(color)
 
             binding.cardView.setOnClickListener {
-                viewModel.toggleClothSelection(item) // ✅ 선택 상태 변경
+                viewModel.toggleClothSelection(item)
                 notifyItemChanged(adapterPosition)
             }
         }

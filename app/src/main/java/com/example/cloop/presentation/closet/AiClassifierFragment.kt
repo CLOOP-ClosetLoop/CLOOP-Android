@@ -59,29 +59,24 @@ class AiClassifierFragment : Fragment() {
             showImagePickerDialog()
         }
 
-        // 분류하기 버튼 눌렀을 때
         binding.btnNext.setOnClickListener {
             val token = TokenManager.getAccessToken(requireContext())
             if (token.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             viewModel.classifyClothWithAI(token) { success ->
                 if (success) {
                     findNavController().navigate(R.id.aiClassifierFragment2)
-                } else {
-                    Toast.makeText(requireContext(), "AI 분류 실패", Toast.LENGTH_SHORT).show()
                 }
             }
         }
-        // 뒤로가기
+
         binding.ivBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
 
-    // 권한 처리 결과
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -94,9 +89,9 @@ class AiClassifierFragment : Fragment() {
     }
 
     private fun showImagePickerDialog() {
-        val options = arrayOf("카메라", "갤러리")
+        val options = arrayOf("Take a Photo", "Choose from Gallery")
         AlertDialog.Builder(requireContext())
-            .setTitle("사진 선택")
+            .setTitle("Select Photo")
             .setItems(options) { _, which ->
                 when (which) {
                     0 -> openCamera()
@@ -161,7 +156,6 @@ class AiClassifierFragment : Fragment() {
             }
             file
         } catch (e: Exception) {
-            Log.e("AiClassifier", "파일 변환 실패: ${e.message}")
             null
         }
     }
@@ -180,15 +174,9 @@ class AiClassifierFragment : Fragment() {
                 if (response.isSuccessful) {
                     val imageUrl = response.body()?.imageUrl
                     viewModel.imageUrl = imageUrl
-                    Log.d("AiClassifier", "이미지 업로드 성공: $imageUrl")
-                    Toast.makeText(requireContext(), "업로드 성공!", Toast.LENGTH_SHORT).show()
-                } else {
-                    Log.e("AiClassifier", "서버 오류: ${response.code()}")
-                    Toast.makeText(requireContext(), "업로드 실패", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Log.e("AiClassifier", "예외: ${e.message}")
-                Toast.makeText(requireContext(), "예외 발생", Toast.LENGTH_SHORT).show()
+                Log.e("AiClassifier", "Exception: ${e.message}")
             }
         }
     }

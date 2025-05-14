@@ -25,7 +25,6 @@ class CategoryClothSelectFragment : Fragment() {
     private var category: String? = null
     private var clothes: List<Cloth> = emptyList()
 
-    // ✅ 외부에서 설정 가능하도록 public var 선언
     var onSelectionChanged: ((List<Cloth>) -> Unit)? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

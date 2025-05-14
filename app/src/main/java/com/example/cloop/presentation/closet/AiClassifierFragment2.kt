@@ -36,7 +36,6 @@ class AiClassifierFragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // AI가 예측한 결과를 EditText에 채워넣기
         binding.etName.setText(viewModel.clothName)
         binding.etCategory.setText(viewModel.category)
         binding.etColor.setText(viewModel.color)
@@ -47,7 +46,6 @@ class AiClassifierFragment2 : Fragment() {
             "WINTER" -> selectSeason(binding.btnWinter)
         }
 
-        // 계절 선택 수동 변경도 가능
         seasonButtons.forEach { button ->
             button.setOnClickListener {
                 selectSeason(button)
@@ -56,9 +54,8 @@ class AiClassifierFragment2 : Fragment() {
         }
 
 
-        // 등록 버튼 클릭 시 API 호출
         binding.btnNext.setOnClickListener {
-            // 1. 사용자 입력값을 ViewModel에 저장
+
             viewModel.clothName = binding.etName.text.toString()
             viewModel.category = binding.etCategory.text.toString()
             viewModel.color = binding.etColor.text.toString()
@@ -67,16 +64,14 @@ class AiClassifierFragment2 : Fragment() {
 
             val token = TokenManager.getAccessToken(requireContext())
             if (token.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             val bearerToken = "Bearer $token"
             viewModel.registerCloth(bearerToken) { success ->
                 if (success) {
-                    Toast.makeText(requireContext(), "옷이 등록되었습니다!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Item added!", Toast.LENGTH_SHORT).show()
 
-                    // HomeFragment로 이동 (fcv_main 기준)
                     val navController = NavHostFragment.findNavController(
                         requireActivity().supportFragmentManager.findFragmentById(R.id.fcv_main)!!
                     )
@@ -84,13 +79,10 @@ class AiClassifierFragment2 : Fragment() {
                         .setPopUpTo(R.id.fragment_home, inclusive = false)
                         .build()
                     navController.navigate(R.id.fragment_home, null, navOptions)
-                } else {
-                    Toast.makeText(requireContext(), "옷 등록 실패", Toast.LENGTH_SHORT).show()
                 }
             }
         }
 
-        // 뒤로가기
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }

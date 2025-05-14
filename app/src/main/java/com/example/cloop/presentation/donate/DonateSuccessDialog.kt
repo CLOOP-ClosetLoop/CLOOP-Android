@@ -17,7 +17,6 @@ class DonateSuccessDialog : DialogFragment() {
             .setView(view)
             .create()
 
-        // 2초 뒤 자동 dismiss
         Handler(Looper.getMainLooper()).postDelayed({
             if (dialog.isShowing) {
                 dialog.dismiss()

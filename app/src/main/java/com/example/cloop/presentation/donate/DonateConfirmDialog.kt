@@ -24,12 +24,10 @@ class DonateConfirmDialog(
             .setView(binding.root)
             .create()
 
-        // 취소
         binding.btnCancel.setOnClickListener {
             dialog.dismiss()
         }
 
-        // 기부
         binding.btnDonate.setOnClickListener {
             val token = TokenManager.getAccessToken(requireContext()) ?: ""
             viewModel.confirmDonation(token, clothId) { success ->

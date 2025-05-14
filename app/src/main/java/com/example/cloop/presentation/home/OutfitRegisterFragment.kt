@@ -38,7 +38,6 @@ class OutfitRegisterFragment : Fragment() {
     private val args: OutfitRegisterFragmentArgs by navArgs()
     private val viewModel: OutfitRegisterViewModel by activityViewModels()
 
-    // ✅ ClosetViewModel도 가져오기
     private val closetViewModel: ClosetViewModel by activityViewModels {
         object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -66,30 +65,26 @@ class OutfitRegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val selectedDate = args.selectedDate
-        Log.d("받은날짜", selectedDate)
+        Log.d("selectedDate", selectedDate)
 
-        // ✅ 전체 옷 불러오기
         val token = TokenManager.getAccessToken(requireContext())
         if (!token.isNullOrEmpty()) {
             closetViewModel.fetchClothes(token)
         }
 
-        // ✅ ClosetViewModel → OutfitRegisterViewModel로 옷 전달
         closetViewModel.allClothes.observe(viewLifecycleOwner) { clothes ->
             viewModel.setAllClothes(clothes)
         }
 
-        // 갤러리/카메라 선택
         binding.btnSelectPhoto.setOnClickListener {
             showImagePickerDialog()
         }
 
-        // 옷 선택 버튼
+
         binding.btnGoToCloset.setOnClickListener { findNavController().navigate(R.id.action_outfitRegister_to_closetSelect) }
         binding.tvSelectedClothes.setOnClickListener { findNavController().navigate(R.id.action_outfitRegister_to_closetSelect) }
 
 
-        // 선택된 옷 표시
         viewModel.selectedClothList.observe(viewLifecycleOwner) { selectedClothes ->
             selectedClothAdapter = SelectedClothAdapter(selectedClothes)
             binding.rvSelectedClothes.apply {
@@ -99,7 +94,6 @@ class OutfitRegisterFragment : Fragment() {
         }
 
 
-        // 등록 결과 처리
         viewModel.registerResult.observe(viewLifecycleOwner) { result ->
             result?.let {
                 Toast.makeText(requireContext(), "Outfit registered!", Toast.LENGTH_SHORT).show()
@@ -112,7 +106,6 @@ class OutfitRegisterFragment : Fragment() {
         }
 
 
-        // 착장 등록 버튼
         binding.btnRegister.setOnClickListener {
             val imageUrl = viewModel.imageUrl.value
             val selectedIds = viewModel.selectedClothList.value?.map { it.clothId } ?: emptyList()
@@ -124,13 +117,11 @@ class OutfitRegisterFragment : Fragment() {
             }
         }
 
-        // 뒤로가기
         binding.ivBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
 
-    // 이미지 선택 처리
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

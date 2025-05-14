@@ -40,10 +40,8 @@ class ClothRegisterFragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 이전 화면에서 선택된 카테고리 값을 보여줌
         binding.etCategory.setText(viewModel.category)
 
-        // 계절 버튼 선택 처리
         seasonButtons = listOf(binding.btnSummer, binding.btnWinter)
         seasonButtons.forEach { button ->
             button.setOnClickListener {
@@ -52,7 +50,6 @@ class ClothRegisterFragment2 : Fragment() {
             }
         }
 
-        // 3. 등록 버튼 처리
         binding.btnNext.setOnClickListener {
             viewModel.clothName = binding.etName.text.toString()
             viewModel.purchasedAt = binding.etDate.text.toString()
@@ -67,9 +64,8 @@ class ClothRegisterFragment2 : Fragment() {
             val bearerToken = "Bearer $token"
             viewModel.registerCloth(bearerToken) { success ->
                 if (success) {
-                    Toast.makeText(requireContext(), "옷이 등록되었습니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Item added!", Toast.LENGTH_SHORT).show()
 
-                    // HomeFragment로 이동
                     val navController = NavHostFragment.findNavController(
                         requireActivity().supportFragmentManager.findFragmentById(R.id.fcv_main)!!
                     )
@@ -77,13 +73,10 @@ class ClothRegisterFragment2 : Fragment() {
                         .setPopUpTo(R.id.fragment_home, inclusive = false)
                         .build()
                     navController.navigate(R.id.fragment_home, null, navOptions)
-                } else {
-                    Toast.makeText(requireContext(), "등록 실패", Toast.LENGTH_SHORT).show()
                 }
             }
         }
 
-        // 뒤로가기 버튼
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
