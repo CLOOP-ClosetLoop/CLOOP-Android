@@ -96,10 +96,10 @@
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:background="@drawable/background_radius_green2"
-                        android:text="Select today’s outfit"
+                        android:text="Select today’s outfit items"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="17sp"
                         android:fontFamily="@font/pretendard"/>
                 </LinearLayout>
 
