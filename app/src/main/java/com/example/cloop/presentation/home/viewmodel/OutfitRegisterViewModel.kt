@@ -50,13 +50,13 @@ class OutfitRegisterViewModel : ViewModel() {
         imageUrl.value = uri.toString()
     }
 
-    fun registerLook(context: Context, clothIds: List<Int>) {
+    fun registerLook(context: Context, clothIds: List<Int>, wornDate: String) {
         val uriString = imageUrl.value ?: return
         val uri = Uri.parse(uriString)
-        uploadImageAndRegisterLook(context, uri, clothIds)
+        uploadImageAndRegisterLook(context, uri, clothIds, wornDate)
     }
 
-    private fun uploadImageAndRegisterLook(context: Context, uri: Uri, clothIds: List<Int>) {
+    private fun uploadImageAndRegisterLook(context: Context, uri: Uri, clothIds: List<Int>, wornDate: String) {
         viewModelScope.launch {
             try {
                 val token = TokenManager.getAccessToken(context)?.let { "Bearer $it" } ?: return@launch
@@ -70,7 +70,7 @@ class OutfitRegisterViewModel : ViewModel() {
                     val uploadedUrl = uploadResponse.body()?.imageUrl ?: return@launch
                     imageUrl.value = uploadedUrl
 
-                    val lookRequest = LookRequest(imageUrl = uploadedUrl, clothIds = clothIds)
+                    val lookRequest = LookRequest(imageUrl = uploadedUrl, clothIds = clothIds, wornDate = wornDate)
                     val registerResponse = RetrofitClient.lookService.registerLook(token, lookRequest)
 
                     if (registerResponse.isSuccessful) {

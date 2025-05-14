@@ -84,6 +84,8 @@ class OutfitRegisterFragment : Fragment() {
         binding.btnGoToCloset.setOnClickListener { findNavController().navigate(R.id.action_outfitRegister_to_closetSelect) }
         binding.tvSelectedClothes.setOnClickListener { findNavController().navigate(R.id.action_outfitRegister_to_closetSelect) }
 
+        binding.tvDate.text = selectedDate
+
 
         viewModel.selectedClothList.observe(viewLifecycleOwner) { selectedClothes ->
             selectedClothAdapter = SelectedClothAdapter(selectedClothes)
@@ -111,7 +113,7 @@ class OutfitRegisterFragment : Fragment() {
             val selectedIds = viewModel.selectedClothList.value?.map { it.clothId } ?: emptyList()
 
             if (!imageUrl.isNullOrBlank() && selectedIds.isNotEmpty()) {
-                viewModel.registerLook(requireContext(), selectedIds)
+                viewModel.registerLook(requireContext(), selectedIds, wornDate = selectedDate )
             } else {
                 Toast.makeText(requireContext(), "Please select both a photo and clothes", Toast.LENGTH_SHORT).show()
             }
