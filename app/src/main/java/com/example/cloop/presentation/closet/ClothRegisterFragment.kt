@@ -72,7 +72,6 @@ class ClothRegisterFragment : Fragment() {
             binding.btnHat,
             binding.btnEtc
         )
-        // 카테고리 선택, 뷰모델에 저장
         categoryButtons.forEach { button ->
             button.setOnClickListener {
                 updateCategorySelection(button)
@@ -80,11 +79,10 @@ class ClothRegisterFragment : Fragment() {
             }
         }
 
-        // 뒤로가기
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
-        // 다음 화면으로 이동
+
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.clothRegisterFragment2)
         }
@@ -102,7 +100,7 @@ class ClothRegisterFragment : Fragment() {
         ) {
             openCamera()
         } else {
-            Toast.makeText(requireContext(), "카메라 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Camera permission is required.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -114,7 +112,7 @@ class ClothRegisterFragment : Fragment() {
 
 
     private fun showImagePickerDialog() {
-        val options = arrayOf("Camera", "Gallery")
+        val options = arrayOf("Take a Photo", "Choose from Gallery")
         AlertDialog.Builder(requireContext())
             .setTitle("Select Photo")
             .setItems(options) { _, which ->
@@ -192,7 +190,6 @@ class ClothRegisterFragment : Fragment() {
             }
             file
         } catch (e: Exception) {
-            Log.e("FileCopy", "파일 변환 실패: ${e.message}")
             null
         }
     }
@@ -200,7 +197,7 @@ class ClothRegisterFragment : Fragment() {
     private fun uploadImage(uri: Uri) {
         val file = uriToTempFile(uri)
         if (file == null) {
-            Toast.makeText(requireContext(), "이미지 파일을 처리할 수 없습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Unable to process the image file.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -219,16 +216,11 @@ class ClothRegisterFragment : Fragment() {
                 if (response.isSuccessful) {
                     val imageUrl = response.body()?.imageUrl
                     viewModel.imageUrl = imageUrl
-                    Log.d("ImageUpload", "업로드 성공: $imageUrl")
-                    Toast.makeText(requireContext(), "업로드 성공!", Toast.LENGTH_SHORT).show()
                 } else {
                     val errorMsg = response.errorBody()?.string()
-                    Log.e("ImageUpload", "서버 응답 실패: $errorMsg")
-                    Toast.makeText(requireContext(), "업로드 실패: $errorMsg", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Log.e("ImageUpload", "예외 발생: ${e.message}")
-                Toast.makeText(requireContext(), "업로드 중 오류 발생", Toast.LENGTH_SHORT).show()
+                Log.e("ImageUpload", "An exception occurred: ${e.message}")
             }
         }
     }
