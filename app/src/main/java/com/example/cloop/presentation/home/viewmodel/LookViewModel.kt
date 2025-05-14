@@ -13,12 +13,14 @@ import kotlinx.coroutines.launch
 
 class LookViewModel(private val lookService: LookService) : ViewModel() {
 
-    private val _looks = MutableLiveData<List<LookItem>>()
-    val looks: LiveData<List<LookItem>> get() = _looks
+    private val _lookItems = MutableLiveData<List<LookItem>>()
+    val lookItems: LiveData<List<LookItem>> get() = _lookItems
 
     fun fetchLooksByDate(context: Context, date: String) {
         val token = TokenManager.getAccessToken(context)
-        if (token == null) {
+
+        if (token.isNullOrBlank()) {
+            Log.w("LookViewModel", "Access token is null or blank")
             return
         }
 
@@ -26,7 +28,8 @@ class LookViewModel(private val lookService: LookService) : ViewModel() {
             try {
                 val response = lookService.getLooksByDate("Bearer $token", date)
                 if (response.isSuccessful) {
-                    _looks.value = response.body() ?: emptyList()
+                    val items = response.body().orEmpty()
+                    _lookItems.value = items
                 } else {
                     Log.e("LookViewModel", "API Error: ${response.code()} ${response.message()}")
                 }
