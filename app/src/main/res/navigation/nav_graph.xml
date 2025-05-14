@@ -82,4 +82,14 @@
         android:label="fragment_ai_classifier2"
         tools:layout="@layout/fragment_ai_classifier2" />
 
+    <fragment
+        android:id="@+id/lookFragment"
+        android:name="com.example.cloop.presentation.home.LookFragment"
+        android:label="fragment_look"
+        tools:layout="@layout/fragment_look">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+
 </navigation>
