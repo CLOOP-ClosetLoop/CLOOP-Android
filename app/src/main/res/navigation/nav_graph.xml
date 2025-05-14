@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_fragment_home_to_fragment_outfit_register"
             app:destination="@id/outfitRegisterFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_lookFragment"
+            app:destination="@id/lookFragment" />
     </fragment>
 
     <fragment
