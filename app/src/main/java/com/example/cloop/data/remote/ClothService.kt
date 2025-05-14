@@ -4,6 +4,7 @@ import com.example.cloop.data.model.cloth.Cloth
 import com.example.cloop.data.model.cloth.ClothRegisterRequest
 import com.example.cloop.data.model.cloth.ImageUploadResponse
 import com.example.cloop.data.model.cloth.RegisterClothResponse
+import com.example.cloop.data.model.cloth.WearStat
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -15,7 +16,7 @@ import retrofit2.http.Part
 
 interface ClothService {
 
-    // 옷 이미지 업로드
+
     @Multipart
     @POST("clothes/image")
     suspend fun uploadClothImage(
@@ -23,17 +24,23 @@ interface ClothService {
         @Part image: MultipartBody.Part
     ): Response<ImageUploadResponse>
 
-    // 옷 정보 등록
+
     @POST("clothes")
     suspend fun registerCloth(
         @Header("Authorization") token: String,
         @Body request: ClothRegisterRequest
     ): Response<RegisterClothResponse>
 
-    // 전체 옷 정보 조회
+
     @GET("/clothes")
     suspend fun getClothes(
         @Header("Authorization") accessToken: String
     ): Response<List<Cloth>>
+
+
+    @GET("/clothes/statistics")
+    suspend fun getWearStats(
+        @Header("Authorization") accessToken: String
+    ): Response<List<WearStat>>
 
 }
