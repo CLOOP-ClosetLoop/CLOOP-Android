@@ -54,7 +54,7 @@ class ClosetFragment : Fragment() {
             tab.text = categories[position]
         }.attach()
 
-        binding.llInactiveCloset.setOnClickListener {
+        binding.llStatsCloset.setOnClickListener {
             findNavController().navigate(R.id.inactiveClosetFragment)
         }
     }
