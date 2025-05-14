@@ -57,16 +57,13 @@ class HomeFragment : Fragment() {
 
         val calendarView = binding.calenderView
 
-        // ✅ API 호출해서 착장 있는 날짜 가져오기
         fetchLookDates()
 
-        // ✅ 날짜 선택
         calendarView.setOnDateChangedListener { _, date, selected ->
             if (selected) {
                 selectedDate = date
 
                 if (lookDates.contains(date)) {
-                    // 🔁 착장 있는 날짜 → LookFragment로 이동
                     val dateStr = date.date.toString()
                     val action = HomeFragmentDirections.actionFragmentHomeToLookFragment(dateStr)
                     findNavController().navigate(action)
@@ -74,11 +71,10 @@ class HomeFragment : Fragment() {
             }
         }
 
-        // ➕ 플로팅 버튼 → 착장 등록은 점 없는 날짜만 가능
         binding.btnPlus.setOnClickListener {
             selectedDate?.let { date ->
                 if (lookDates.contains(date)) {
-                    Toast.makeText(requireContext(), "이미 착장이 등록된 날짜입니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "This date already has a registered outfit.", Toast.LENGTH_SHORT).show()
                 } else {
                     val dateStr = date.date.toString()
                     val action = HomeFragmentDirections.actionFragmentHomeToFragmentOutfitRegister(dateStr)

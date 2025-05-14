@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.cloop.R
@@ -51,7 +52,7 @@ class LookFragment : Fragment() {
         binding.tvDate.text = selectedDate
 
         adapter = LookAdapter()
-        binding.rvLookClothes.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvLookClothes.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvLookClothes.adapter = adapter
 
         viewModel.fetchLooksByDate(requireContext(), selectedDate)
@@ -64,7 +65,6 @@ class LookFragment : Fragment() {
                     .load(look.imageUrl)
                     .into(binding.ivCloth)
 
-                // 옷 리스트를 어댑터에 넘김
                 adapter.submitList(look.clothes)
             }
         }
