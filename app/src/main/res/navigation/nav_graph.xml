@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_fragment_home_to_fragment_outfit_register"
             app:destination="@id/outfitRegisterFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_lookFragment"
+            app:destination="@id/lookFragment" />
     </fragment>
 
     <fragment
@@ -81,5 +84,15 @@
         android:name="com.example.cloop.presentation.closet.AiClassifierFragment2"
         android:label="fragment_ai_classifier2"
         tools:layout="@layout/fragment_ai_classifier2" />
+
+    <fragment
+        android:id="@+id/lookFragment"
+        android:name="com.example.cloop.presentation.home.LookFragment"
+        android:label="fragment_look"
+        tools:layout="@layout/fragment_look">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

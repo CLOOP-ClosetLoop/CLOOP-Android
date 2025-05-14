@@ -86,6 +86,11 @@ class OutfitRegisterFragment : Fragment() {
 
         binding.tvDate.text = selectedDate
 
+        viewModel.imageUrl.value?.let { imageStr ->
+            val uri = Uri.parse(imageStr)
+            binding.ivCloth.setImageURI(uri)
+        }
+
 
         viewModel.selectedClothList.observe(viewLifecycleOwner) { selectedClothes ->
             selectedClothAdapter = SelectedClothAdapter(selectedClothes)
