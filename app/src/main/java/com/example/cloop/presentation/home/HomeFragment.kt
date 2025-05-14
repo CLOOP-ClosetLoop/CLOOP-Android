@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
                     .actionFragmentHomeToFragmentOutfitRegister(dateStr)
                 findNavController().navigate(action)
             } ?: run {
-                Toast.makeText(requireContext(), "날짜를 선택해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please select a date", Toast.LENGTH_SHORT).show()
             }
         }
 

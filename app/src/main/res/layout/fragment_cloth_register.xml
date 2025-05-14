@@ -32,8 +32,9 @@
                 app:layout_constraintEnd_toEndOf="parent">
                 <ImageView
                     android:id="@+id/iv_cloth"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_width="245dp"
+                    android:layout_height="305dp"
                     android:scaleType="centerCrop"/>
             </FrameLayout>
 

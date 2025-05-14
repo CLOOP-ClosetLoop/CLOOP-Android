@@ -26,16 +26,14 @@ object RetrofitClient {
         .build()
 
 
-    // 구글 로그인, 회원가입
     val authService: AuthService = retrofit.create(AuthService::class.java)
 
-    // 옷 직접 등록
     val clothService: ClothService = retrofit.create(ClothService::class.java)
 
-    // ai 옷 등록
     val aiService: AiService by lazy { retrofit.create(AiService::class.java) }
 
-    // 기부 페이지
     val donateService: DonateService = retrofit.create(DonateService::class.java)
+
+    val lookService: LookService = retrofit.create(LookService::class.java)
 
 }
