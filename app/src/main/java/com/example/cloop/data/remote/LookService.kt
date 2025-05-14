@@ -36,4 +36,11 @@ interface LookService {
         @Header("Authorization") token: String,
         @Query("date") date: String
     ): Response<List<LookItem>>
+
+
+    @GET("looks/dates")
+    suspend fun getLookDates(
+        @Header("Authorization") token: String
+    ): Response<List<String>>
+
 }
