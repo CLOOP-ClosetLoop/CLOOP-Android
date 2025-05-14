@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
                 <androidx.cardview.widget.CardView
-                    android:layout_width="225dp"
+                    android:layout_width="215dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="13dp"
                     android:layout_marginStart="20dp"
@@ -49,7 +49,7 @@
                     app:cardCornerRadius="16dp"
                     app:cardElevation="0dp">
                     <LinearLayout
-                        android:id="@+id/ll_inactive_closet"
+                        android:id="@+id/ll_stats_closet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
@@ -64,7 +64,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="	View Unworn Clothes"
+                                android:text="View Wear Stats"
                                 android:fontFamily="@font/pretendard"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"

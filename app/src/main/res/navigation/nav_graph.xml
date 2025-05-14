@@ -53,9 +53,9 @@
 
     <fragment
         android:id="@+id/inactiveClosetFragment"
-        android:name="com.example.cloop.presentation.closet.InactiveClosetFragment"
+        android:name="com.example.cloop.presentation.closet.WearStatsFragment"
         android:label="fragment_inactive_closet"
-        tools:layout="@layout/fragment_inactive_closet" />
+        tools:layout="@layout/fragment_wear_stats" />
 
     <fragment
         android:id="@+id/outfitRegisterFragment"
