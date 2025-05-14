@@ -100,7 +100,7 @@ class ClothRegisterFragment : Fragment() {
         if (requestCode == CAMERA_CODE && grantResults.isNotEmpty()
             && grantResults[0] == PackageManager.PERMISSION_GRANTED
         ) {
-            openCamera()  // 권한 승인 -> 다시 카메라 실행
+            openCamera()
         } else {
             Toast.makeText(requireContext(), "카메라 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
         }
@@ -114,9 +114,9 @@ class ClothRegisterFragment : Fragment() {
 
 
     private fun showImagePickerDialog() {
-        val options = arrayOf("카메라", "갤러리")
+        val options = arrayOf("Camera", "Gallery")
         AlertDialog.Builder(requireContext())
-            .setTitle("사진 선택")
+            .setTitle("Select Photo")
             .setItems(options) { _, which ->
                 when (which) {
                     0 -> openCamera()
