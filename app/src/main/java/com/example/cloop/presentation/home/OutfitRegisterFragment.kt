@@ -16,9 +16,12 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cloop.R
 import com.example.cloop.TokenManager
 import com.example.cloop.data.remote.RetrofitClient
@@ -82,27 +85,32 @@ class OutfitRegisterFragment : Fragment() {
         }
 
         // 옷 선택 버튼
-        binding.btnGoToCloset.setOnClickListener {
-            findNavController().navigate(R.id.action_outfitRegister_to_closetSelect)
-        }
+        binding.btnGoToCloset.setOnClickListener { findNavController().navigate(R.id.action_outfitRegister_to_closetSelect) }
+        binding.tvSelectedClothes.setOnClickListener { findNavController().navigate(R.id.action_outfitRegister_to_closetSelect) }
+
 
         // 선택된 옷 표시
         viewModel.selectedClothList.observe(viewLifecycleOwner) { selectedClothes ->
             selectedClothAdapter = SelectedClothAdapter(selectedClothes)
             binding.rvSelectedClothes.apply {
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                layoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
                 adapter = selectedClothAdapter
             }
         }
 
+
         // 등록 결과 처리
         viewModel.registerResult.observe(viewLifecycleOwner) { result ->
             result?.let {
-                Toast.makeText(requireContext(), "착장이 등록되었습니다!", Toast.LENGTH_SHORT).show()
-                findNavController().popBackStack()
+                Toast.makeText(requireContext(), "Outfit registered!", Toast.LENGTH_SHORT).show()
+
+                findNavController().navigate(R.id.fragment_home, null,
+                    NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).build()
+                )
                 viewModel.registerResult.value = null
             }
         }
+
 
         // 착장 등록 버튼
         binding.btnRegister.setOnClickListener {
@@ -112,7 +120,7 @@ class OutfitRegisterFragment : Fragment() {
             if (!imageUrl.isNullOrBlank() && selectedIds.isNotEmpty()) {
                 viewModel.registerLook(requireContext(), selectedIds)
             } else {
-                Toast.makeText(requireContext(), "사진과 옷을 모두 선택해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please select both a photo and clothes", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -147,9 +155,9 @@ class OutfitRegisterFragment : Fragment() {
     }
 
     private fun showImagePickerDialog() {
-        val options = arrayOf("갤러리에서 선택", "카메라로 촬영")
+        val options = arrayOf("Choose from Gallery", "Take a Photo")
         AlertDialog.Builder(requireContext())
-            .setTitle("사진 선택")
+            .setTitle("Select Photo")
             .setItems(options) { _, which ->
                 when (which) {
                     0 -> pickImageFromGallery()
