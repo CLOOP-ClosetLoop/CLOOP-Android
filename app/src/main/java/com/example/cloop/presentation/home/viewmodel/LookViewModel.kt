@@ -20,7 +20,6 @@ class LookViewModel(private val lookService: LookService) : ViewModel() {
         val token = TokenManager.getAccessToken(context)
 
         if (token.isNullOrBlank()) {
-            Log.w("LookViewModel", "Access token is null or blank")
             return
         }
 
@@ -30,11 +29,8 @@ class LookViewModel(private val lookService: LookService) : ViewModel() {
                 if (response.isSuccessful) {
                     val items = response.body().orEmpty()
                     _lookItems.value = items
-                } else {
-                    Log.e("LookViewModel", "API Error: ${response.code()} ${response.message()}")
                 }
             } catch (e: Exception) {
-                Log.e("LookViewModel", "Exception: ${e.localizedMessage}")
             }
         }
     }
