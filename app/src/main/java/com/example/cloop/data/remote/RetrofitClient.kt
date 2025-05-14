@@ -36,4 +36,30 @@ object RetrofitClient {
 
     val lookService: LookService = retrofit.create(LookService::class.java)
 
+
+
+    fun provideAuthServiceWithToken(token: String): AuthService {
+        val clientWithAuth = OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
+            .addInterceptor { chain ->
+                val request = chain.request().newBuilder()
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+                chain.proceed(request)
+            }
+            .build()
+
+        val retrofitWithAuth = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(clientWithAuth)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        return retrofitWithAuth.create(AuthService::class.java)
+    }
+
 }
