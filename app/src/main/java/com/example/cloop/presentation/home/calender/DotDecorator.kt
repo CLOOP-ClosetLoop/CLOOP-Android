@@ -6,14 +6,12 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
 import com.prolificinteractive.materialcalendarview.spans.DotSpan
 
-class DotDecorator(private val dates: Collection<CalendarDay>) : DayViewDecorator {
-    private val dotSpan = DotSpan(8f, Color.parseColor("#A8A8A8"))
-
+class DotDecorator(private val dates: Set<CalendarDay>) : DayViewDecorator {
     override fun shouldDecorate(day: CalendarDay): Boolean {
         return dates.contains(day)
     }
 
     override fun decorate(view: DayViewFacade) {
-        view.addSpan(dotSpan)
+        view.addSpan(DotSpan(8f, Color.parseColor("#A8A8A8")))
     }
 }
