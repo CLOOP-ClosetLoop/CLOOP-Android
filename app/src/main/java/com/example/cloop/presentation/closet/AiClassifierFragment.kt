@@ -60,12 +60,6 @@ class AiClassifierFragment : Fragment() {
         }
 
         binding.btnNext.setOnClickListener {
-            if (imageUri == null || viewModel.imageUrl.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "Please upload a photo.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-
             val token = TokenManager.getAccessToken(requireContext())
             if (token.isNullOrEmpty()) {
                 return@setOnClickListener

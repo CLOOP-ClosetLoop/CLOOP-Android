@@ -51,19 +51,6 @@ class ClothRegisterFragment2 : Fragment() {
         }
 
         binding.btnNext.setOnClickListener {
-            val category = binding.etCategory.text.toString()
-            val name = binding.etName.text.toString()
-            val purchasedAt = binding.etDate.text.toString()
-            val brand = binding.brand.text.toString()
-            val color = binding.etColor.text.toString()
-            val season = selectedSeason
-
-            if (category.isBlank() || name.isBlank() || purchasedAt.isBlank() ||
-                brand.isBlank() || color.isBlank() || season.isNullOrBlank()) {
-                Toast.makeText(requireContext(), "Please fill in all fields.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
 
             viewModel.clothName = binding.etName.text.toString()
             viewModel.purchasedAt = binding.etDate.text.toString()

@@ -56,20 +56,6 @@ class AiClassifierFragment2 : Fragment() {
 
         binding.btnNext.setOnClickListener {
 
-            val name = binding.etName.text.toString()
-            val category = binding.etCategory.text.toString()
-            val color = binding.etColor.text.toString()
-            val purchasedAt = binding.etDate.text.toString()
-            val brand = binding.brand.text.toString()
-            val season = viewModel.season
-
-            if (name.isBlank() || category.isBlank() || color.isBlank() ||
-                purchasedAt.isBlank() || brand.isBlank() || season.isNullOrBlank()) {
-                Toast.makeText(requireContext(), "모든 항목을 작성해주세요.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-
             viewModel.clothName = binding.etName.text.toString()
             viewModel.category = binding.etCategory.text.toString()
             viewModel.color = binding.etColor.text.toString()
