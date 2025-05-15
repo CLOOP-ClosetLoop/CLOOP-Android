@@ -1,6 +1,6 @@
 # [2025 APAC Google Solution Challenge] CLOOP-Android
 
-![Frame](https://github.com/user-attachments/assets/c031c510-ccb5-47b4-8b0a-4676cfdc6f9f)
+![Frame](https://github.com/user-attachments/assets/30b46775-82fa-4c75-bfc9-c669f8c441a6)
 </br></br>
 
 > Wear it, log it, and cycle it  🌱
@@ -16,9 +16,9 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
   <tr>
     <td><img width="200" src="https://github.com/user-attachments/assets/24c22fcb-6d70-4fec-9fc8-d0a82dfba932"></td>
     <td><img width="200" src="https://github.com/user-attachments/assets/bdd8bfd9-a0f3-476b-8722-a145def355f4"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/1b7e8ef4-8b89-4413-8f42-240a34ebb253"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/61dd86c1-889b-402d-be83-7dff099334f7"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/cf4cb1ea-9acf-480e-946d-13f41633376e"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/ac3bee5d-51c1-494a-abde-613c82b2d8b8"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/52a17bb9-fd33-48a6-95c0-ab046a337584"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/0194a560-8c3b-40f8-8533-dfa52086df71"></td>
   </tr>
   <tr>
     <td align="center"><b>Splash</b></td>
@@ -38,14 +38,13 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
 
 </br></br>
 
-
 <table>
   <tr>
-    <td><img width="200" src="https://github.com/user-attachments/assets/19f7ac84-e945-452e-9216-a31f666c49fb"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/e51869d4-a9c3-413f-89aa-9508885228e0"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/8c6a791f-64ea-4fc7-aaf1-df32df78625d"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/a2b7e1f9-c103-4aea-86f7-2cd15cc4476d"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/4a141998-9570-4e1d-a5e6-a1b0c929e3e9"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/14bebd42-148b-4428-b450-e5a0f9ca5938"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/bdbfe5e6-886b-4e65-b15d-93995e7bc05c"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/da364562-fe8d-49ff-8c08-89a87cd43d50"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/47a46fec-c179-49b8-a88e-b81cd6a525f2"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/05f7f4e0-3017-4d0e-a7bc-00afb7d32e99"></td>
   </tr>
   <tr>
     <td align="center"><b>Add Cloth Dialog</b></td>
@@ -63,12 +62,13 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
 
 </br></br>
 
+
 <table>
   <tr>
-    <td><img width="200" src="https://github.com/user-attachments/assets/8b428cbd-85bb-42e4-8c14-8176491b9016"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/acae644f-d4e9-4672-b6f0-da4c9b8dd2e7"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/143e094b-6b99-4e2b-a83c-f9b0e5f2d1c8"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/943eaf72-c2ac-4d10-870f-6bcce269768d"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/72497d89-1d0c-4764-a627-c58dc0ff09ad"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/2d298653-153b-4247-bdee-98bce813de5a"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/925a0e5a-821d-4e37-b2d5-f844051ada56"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/0135a163-a127-4cf4-a474-7cde1601000d"></td>
   </tr>
   <tr>
     <td align="center"><b>Register Outfit</b></td>
@@ -88,10 +88,10 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
 
 <table>
   <tr>
-    <td><img width="200" src="https://github.com/user-attachments/assets/9c23137e-5305-4f7e-9fd8-67ce9c44bd07"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/8a792c20-bf8d-4c92-8c4b-a8de25e1f47f"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/fdc47dc1-ff2e-461f-ba51-d3a774e118ec"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/512d7822-c63e-45ab-94bc-da47c1c42c8d"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/f16aa33c-db12-4b74-b56b-f89158e5cd9c"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/a5a52f65-e9ef-4ff4-a51b-8fa186e268a5"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/db8b0e31-bcd4-40ff-b563-6d3d9766a8cb"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/e20ee2c9-6741-4170-baaf-4193813144f6"></td>
   </tr>
   <tr>
     <td align="center"><b>Donate</b></td>
@@ -113,7 +113,7 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
 
 ### Project Architecture
 
-<img width="741" alt="스크린샷 2025-05-16 오전 1 20 07" src="https://github.com/user-attachments/assets/1fc5382a-136d-4222-ac60-cfb98b10eb8f" />
+<img width="740" alt="스크린샷 2025-05-16 오전 1 58 26" src="https://github.com/user-attachments/assets/967565cb-c8e2-4aa2-b462-9d06a45d2a46" />
 
 </br>
 
