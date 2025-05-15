@@ -105,6 +105,8 @@ class OutfitRegisterFragment : Fragment() {
             result?.let {
                 Toast.makeText(requireContext(), "Outfit registered!", Toast.LENGTH_SHORT).show()
 
+                viewModel.clearRegisterData()
+
                 findNavController().navigate(R.id.fragment_home, null,
                     NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).build()
                 )

@@ -56,6 +56,12 @@ class OutfitRegisterViewModel : ViewModel() {
         uploadImageAndRegisterLook(context, uri, clothIds, wornDate)
     }
 
+    fun clearRegisterData() {
+        selectedClothList.value = emptyList()
+        imageUrl.value = null
+        registerResult.value = null
+    }
+
     private fun uploadImageAndRegisterLook(context: Context, uri: Uri, clothIds: List<Int>, wornDate: String) {
         viewModelScope.launch {
             try {
