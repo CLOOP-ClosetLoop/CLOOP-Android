@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.cloop.R
 import com.example.cloop.data.model.cloth.WearStat
 import com.example.cloop.databinding.ItemStatsClothBinding
 
@@ -17,6 +19,11 @@ class WearStatsAdapter : ListAdapter<WearStat, WearStatsAdapter.ViewHolder>(Diff
             binding.tvName.text = item.clothName
             binding.tvStats.text = "Worn ${item.wearCount} times"
             binding.tvLastWorn.text = "Last worn\n${item.lastWornAt}"
+
+            Glide.with(binding.ivCloth.context)
+                .load(item.imageUrl)
+                .placeholder(R.drawable.ic_placeholder_image)
+                .into(binding.ivCloth)
         }
     }
 

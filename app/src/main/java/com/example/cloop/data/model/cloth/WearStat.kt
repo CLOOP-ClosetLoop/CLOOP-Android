@@ -4,5 +4,6 @@ data class WearStat(
     val clothId: Int,
     val clothName: String,
     val wearCount: Int,
-    val lastWornAt: String
+    val lastWornAt: String,
+    val imageUrl: String
 )
