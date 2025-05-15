@@ -63,16 +63,16 @@
 
                 <FrameLayout
                     android:id="@+id/fl_cloth"
-                    android:layout_width="260dp"
-                    android:layout_height="320dp"
+                    android:layout_width="300dp"
+                    android:layout_height="370dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/background_radius_green">
                     <ImageView
                         android:id="@+id/iv_cloth"
                         android:layout_gravity="center"
-                        android:layout_width="245dp"
-                        android:layout_height="305dp"
+                        android:layout_width="280dp"
+                        android:layout_height="340dp"
                         android:scaleType="centerCrop"/>
                 </FrameLayout>
 
