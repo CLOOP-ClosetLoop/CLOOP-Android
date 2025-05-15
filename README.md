@@ -14,8 +14,8 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
 ## Features
 <table>
   <tr>
-    <td><img width="200" src="https://github.com/user-attachments/assets/46e57e55-43ce-403f-acaa-86c474fc6463"></td>
-    <td><img width="200" src="https://github.com/user-attachments/assets/e67c27bc-ec9b-4c5e-8198-f8b79950652c"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/24c22fcb-6d70-4fec-9fc8-d0a82dfba932"></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/bdd8bfd9-a0f3-476b-8722-a145def355f4"></td>
     <td><img width="200" src="https://github.com/user-attachments/assets/1b7e8ef4-8b89-4413-8f42-240a34ebb253"></td>
     <td><img width="200" src="https://github.com/user-attachments/assets/61dd86c1-889b-402d-be83-7dff099334f7"></td>
     <td><img width="200" src="https://github.com/user-attachments/assets/cf4cb1ea-9acf-480e-946d-13f41633376e"></td>
