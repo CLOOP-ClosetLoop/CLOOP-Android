@@ -84,6 +84,11 @@ class ClothRegisterFragment : Fragment() {
         }
 
         binding.btnNext.setOnClickListener {
+            if (imageUri == null || viewModel.category.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "Please upload a photo and select a category.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             findNavController().navigate(R.id.clothRegisterFragment2)
         }
     }
