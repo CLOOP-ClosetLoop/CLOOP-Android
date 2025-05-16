@@ -118,7 +118,7 @@
 
         <com.prolificinteractive.materialcalendarview.MaterialCalendarView
             android:id="@+id/calender_view"
-            android:layout_width="380dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:mcv_selectionMode="single"
             app:mcv_showOtherDates="all"
