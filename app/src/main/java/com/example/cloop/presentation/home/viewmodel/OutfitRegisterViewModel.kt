@@ -22,7 +22,7 @@ import java.io.File
 class OutfitRegisterViewModel : ViewModel() {
 
     val selectedClothList = MutableLiveData<List<Cloth>>(emptyList())
-    val imageUrl = MutableLiveData<String>()
+    val imageUrl = MutableLiveData<String?>()
     val registerResult = MutableLiveData<LookRegisterResponse?>()
 
     private val _allClothes = MutableLiveData<List<Cloth>>()
