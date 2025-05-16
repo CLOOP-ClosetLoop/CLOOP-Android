@@ -10,15 +10,7 @@
 CLOOP is a sustainable wardrobe management app that helps you record, organize, and recycle your clothes efficiently.
 <br/>
 
-Check out our app introduction [here](https://docs.google.com/presentation/d/14mCG2ac398UT0WdaiDCIWAVDbjbvcgoODGe_BHXSrBs/edit?slide=id.g3583e342359_1_39#slide=id.g3583e342359_1_39) !
-
-<br/>
-
-### Developer
-| [Juyeon Park](https://github.com/Zuyeonn) | [Sihyun Kim](https://github.com/5IHYUN) | [Wonjeong Ko](https://github.com/on1yoneprivate) |
-|:------:|:------:|:------:|
-|`FrontEnd`|`BackEnd`|`BackEnd`|
-
+✅ Check out our app introduction [here](https://docs.google.com/presentation/d/14mCG2ac398UT0WdaiDCIWAVDbjbvcgoODGe_BHXSrBs/edit?slide=id.g3583e342359_1_39#slide=id.g3583e342359_1_39) !
 </br></br>
 
 ## Features
@@ -127,6 +119,12 @@ Check out our app introduction [here](https://docs.google.com/presentation/d/14m
 
 </br>
 
+### Developer
+| [Juyeon Park](https://github.com/Zuyeonn) | [Sihyun Kim](https://github.com/5IHYUN) | [Wonjeong Ko](https://github.com/on1yoneprivate) |
+|:------:|:------:|:------:|
+|`FrontEnd`|`BackEnd`|`BackEnd`|
+
+<br/>
 
 ### Android Stack
 <table class="tg">
