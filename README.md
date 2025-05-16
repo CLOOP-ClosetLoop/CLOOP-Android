@@ -8,6 +8,9 @@
 
 
 CLOOP is a sustainable wardrobe management app that helps you record, organize, and recycle your clothes efficiently.
+
+Check out our app introduction [here](https://docs.google.com/presentation/d/14mCG2ac398UT0WdaiDCIWAVDbjbvcgoODGe_BHXSrBs/edit?slide=id.g3583e342359_1_39#slide=id.g3583e342359_1_39) !
+
 </br></br>
 
 
