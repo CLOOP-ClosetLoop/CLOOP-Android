@@ -138,7 +138,7 @@ CLOOP is a sustainable wardrobe management app that helps you record, organize, 
 <td>AppCompat, LifeCycles, ViewModel, LiveData, viewPager2, ... </td>
 </tr>
  <tr>
-    <td><b>library</b></td>
+    <td><b>Library</b></td>
 <td>Standard Library, Material Design, Glide</td>
 </tr>
 <tr>
